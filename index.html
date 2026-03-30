@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twoja Marka Finansowa</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 70px 0 40px;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #475569;
+      max-width: 700px;
+    }
+    .button {
+      display: inline-block;
+      background: #0f172a;
+      color: white;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 14px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .section {
+      padding: 50px 0;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+    .badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #334155;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .card h3 {
+      margin: 16px 0 10px;
+      font-size: 24px;
+    }
+    .benefit {
+      background: #f8fafc;
+      padding: 14px;
+      border-radius: 14px;
+      margin: 16px 0;
+      font-weight: bold;
+    }
+    ul { padding-left: 18px; }
+    footer {
+      background: white;
+      border-top: 1px solid #e2e8f0;
+      padding: 40px 0;
+      color: #475569;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Twoja Marka Finansowa</div>
+        <a class="button" href="#oferty">Zobacz oferty</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Promocje kont i pożyczek w jednym miejscu</h1>
+        <p>
+          Na tej stronie znajdziesz wybrane oferty finansowe. Po kliknięciu w przycisk
+          przejdziesz do strony partnera, gdzie możesz sprawdzić szczegóły i warunki oferty.
+        </p>
+        <a class="button" href="#oferty">Przejdź do ofert</a>
+      </div>
+    </section>
+
+    <section id="oferty" class="section">
+      <div class="container">
+        <h2>Polecane oferty</h2>
+        <div class="cards">
+          <div class="card">
+            <span class="badge">Popularne</span>
+            <h3>Konto osobiste</h3>
+            <p>Premia za otwarcie konta i spełnienie warunków promocji.</p>
+            <div class="benefit">Do 500 zł premii</div>
+            <ul>
+              <li>Wniosek online</li>
+              <li>Aplikacja mobilna</li>
+              <li>Prosty proces założenia</li>
+            </ul>
+            <a class="button" href="TU_WKLEJ_LINK_1" target="_blank">Przejdź do oferty</a>
+          </div>
+
+          <div class="card">
+            <span class="badge">Oszczędzanie</span>
+            <h3>Konto oszczędnościowe</h3>
+            <p>Promocyjne oprocentowanie dla nowych klientów lub nowych środków.</p>
+            <div class="benefit">Promocyjne warunki</div>
+            <ul>
+              <li>Założenie online</li>
+              <li>Bezpieczne oszczędzanie</li>
+              <li>Szczegóły na stronie partnera</li>
+            </ul>
+            <a class="button" href="TU_WKLEJ_LINK_2" target="_blank">Sprawdź ofertę</a>
+          </div>
+
+          <div class="card">
+            <span class="badge">Szybka decyzja</span>
+            <h3>Pożyczka gotówkowa</h3>
+            <p>Wygodny wniosek online i szybkie sprawdzenie warunków oferty.</p>
+            <div class="benefit">Minimum formalności</div>
+            <ul>
+              <li>Wniosek przez internet</li>
+              <li>Jasne warunki</li>
+              <li>Szczegóły u partnera</li>
+            </ul>
+            <a class="button" href="TU_WKLEJ_LINK_3" target="_blank">Zobacz ofertę</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Ważne informacje</h2>
+        <p>
+          Strona ma charakter informacyjno-promocyjny. Nie stanowi porady finansowej.
+          Przed skorzystaniem z oferty zapoznaj się z regulaminem, warunkami i tabelą opłat na stronie partnera.
+        </p>
+        <p>
+          Niektóre linki na stronie mogą być linkami afiliacyjnymi. Oznacza to, że mogę otrzymać prowizję,
+          jeśli użytkownik skorzysta z oferty po przejściu przez link. Nie wpływa to na koszt dla użytkownika.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Twoja Marka Finansowa. Wszystkie prawa zastrzeżone.
+    </div>
+  </footer>
+</body>
+</html>
