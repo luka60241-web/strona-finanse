@@ -3,26 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Twoja Marka Finansowa</title>
+  <title>Konta z premią, kredyty, karty i ubezpieczenia | Twoja Marka Finansowa</title>
+  <meta name="description" content="Sprawdź wybrane oferty finansowe: konta z premią, kredyty gotówkowe, karty kredytowe i ubezpieczenia na życie. Przejdź do oferty online i poznaj szczegóły." />
+  <meta name="robots" content="index, follow" />
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; font-family: Arial, sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.6; }
-    .container { width: min(1100px, 92%); margin: 0 auto; }
-    header { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+    .container { width: min(1180px, 92%); margin: 0 auto; }
+    header { background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; backdrop-filter: blur(8px); z-index: 5; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; gap: 16px; }
     .logo { font-size: 24px; font-weight: bold; }
-    .hero { padding: 70px 0 40px; }
-    .hero h1 { font-size: 42px; margin-bottom: 16px; }
-    .hero p { font-size: 18px; color: #475569; max-width: 700px; }
-    .button { display: inline-block; background: #0f172a; color: white; text-decoration: none; padding: 14px 22px; border-radius: 14px; margin-top: 20px; font-weight: bold; }
-    .section { padding: 50px 0; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .card { background: white; border: 1px solid #e2e8f0; border-radius: 20px; padding: 24px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05); }
+    .nav-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .nav-links a { color: #334155; text-decoration: none; font-size: 14px; }
+    .hero { padding: 72px 0 48px; background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 55%, #ffffff 100%); }
+    .hero-box { max-width: 780px; }
+    .eyebrow { display: inline-block; background: #dbeafe; color: #1e3a8a; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: bold; }
+    .hero h1 { font-size: 46px; margin: 18px 0 14px; line-height: 1.15; }
+    .hero p { font-size: 18px; color: #475569; max-width: 720px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+    .button { display: inline-block; background: #0f172a; color: white; text-decoration: none; padding: 14px 22px; border-radius: 14px; font-weight: bold; }
+    .button-light { display: inline-block; background: white; color: #0f172a; text-decoration: none; padding: 14px 22px; border-radius: 14px; font-weight: bold; border: 1px solid #cbd5e1; }
+    .section { padding: 52px 0; }
+    .section h2 { font-size: 34px; margin-bottom: 12px; }
+    .section-intro { color: #475569; max-width: 760px; margin-bottom: 26px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: white; border: 1px solid #e2e8f0; border-radius: 22px; padding: 24px; box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05); display: flex; flex-direction: column; }
     .badge { display: inline-block; background: #e2e8f0; color: #334155; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: bold; }
     .card h3 { margin: 16px 0 10px; font-size: 24px; }
     .benefit { background: #f8fafc; padding: 14px; border-radius: 14px; margin: 16px 0; font-weight: bold; }
-    ul { padding-left: 18px; }
+    .card p { color: #475569; }
+    .card ul { padding-left: 18px; color: #334155; }
+    .card .button { margin-top: auto; text-align: center; }
+    .highlight { background: #0f172a; color: white; border-radius: 28px; padding: 34px; }
+    .highlight p { color: #cbd5e1; }
+    .info-box { background: white; border: 1px solid #e2e8f0; border-radius: 22px; padding: 24px; }
     footer { background: white; border-top: 1px solid #e2e8f0; padding: 40px 0; color: #475569; font-size: 14px; }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 34px; }
+      .section h2 { font-size: 28px; }
+      nav { flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
@@ -30,7 +50,12 @@
     <div class="container">
       <nav>
         <div class="logo">Twoja Marka Finansowa</div>
-        <a class="button" href="#oferty">Zobacz oferty</a>
+        <div class="nav-links">
+          <a href="#konta">Konta</a>
+          <a href="#kredyty">Kredyty</a>
+          <a href="#ubezpieczenia">Ubezpieczenia</a>
+          <a href="#karty">Karty</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -38,71 +63,154 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Promocje kont i finansów w jednym miejscu</h1>
-        <p>
-          Kliknij w wybraną ofertę i przejdź do strony partnera. Możesz sprawdzić szczegóły i złożyć wniosek online.
-        </p>
-        <a class="button" href="#oferty">Przejdź do ofert</a>
+        <div class="hero-box">
+          <span class="eyebrow">Wybrane oferty finansowe online</span>
+          <h1>Konta z premią, kredyty, karty kredytowe i ubezpieczenia w jednym miejscu</h1>
+          <p>
+            Na tej stronie znajdziesz popularne oferty finansowe. Kliknij w wybraną propozycję,
+            przejdź do strony partnera i sprawdź szczegóły, warunki oraz możliwość złożenia wniosku online.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#konta">Zobacz oferty</a>
+            <a class="button-light" href="#wazne">Ważne informacje</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="oferty" class="section">
+    <section id="konta" class="section">
       <div class="container">
-        <h2>Polecane oferty</h2>
+        <h2>Konta z bonusem</h2>
+        <p class="section-intro">Sprawdź oferty kont osobistych z premiami i promocjami dla nowych klientów.</p>
         <div class="cards">
-
           <div class="card">
-            <span class="badge">Najpopularniejsze</span>
-            <h3>Konto z bonusem</h3>
-            <p>Załóż konto i zgarnij premię pieniężną.</p>
-            <div class="benefit">Bonus nawet kilkaset zł</div>
-            <a class="button" href="https://tmlead.pl/redirect/826719_3116" target="_blank">Zobacz ofertę</a>
+            <span class="badge">Konto z premią</span>
+            <h3>Oferta konta 1</h3>
+            <p>Załóż konto online i sprawdź warunki uzyskania premii.</p>
+            <div class="benefit">Promocja dla nowych klientów</div>
+            <ul><li>Wniosek online</li><li>Możliwa premia pieniężna</li><li>Szczegóły na stronie partnera</li></ul>
+            <a class="button" href="https://tmlead.pl/redirect/826719_3116" target="_blank" rel="nofollow sponsored">Przejdź do oferty</a>
           </div>
-
           <div class="card">
-            <span class="badge">Pożyczki</span>
-            <h3>Kredyt gotówkowy</h3>
-            <p>Szybki wniosek online i decyzja bez wychodzenia z domu.</p>
-            <div class="benefit">Szybka decyzja</div>
-            <a class="button" href="https://tmlead.pl/redirect/826719_2403" target="_blank">Sprawdź kredyt</a>
+            <span class="badge">Konto z premią</span>
+            <h3>Oferta konta 2</h3>
+            <p>Poznaj promocję bankową i wymagania dla uczestników.</p>
+            <div class="benefit">Premia za aktywność</div>
+            <ul><li>Otwarcie online</li><li>Warunki opisane u partnera</li><li>Oferta dla nowych klientów</li></ul>
+            <a class="button" href="https://tmlead.pl/redirect/826719_3108" target="_blank" rel="nofollow sponsored">Przejdź do oferty</a>
           </div>
-
           <div class="card">
-            <span class="badge">Bezpieczeństwo</span>
-            <h3>Ubezpieczenie na życie</h3>
-            <p>Zadbaj o bezpieczeństwo swoje i bliskich.</p>
-            <div class="benefit">Ochrona finansowa</div>
-            <a class="button" href="https://tmlead.pl/redirect/826719_2186" target="_blank">Zobacz ofertę</a>
+            <span class="badge">Konto z premią</span>
+            <h3>Oferta konta 3</h3>
+            <p>Sprawdź korzyści i możliwość otrzymania bonusu po założeniu konta.</p>
+            <div class="benefit">Bonus na start</div>
+            <ul><li>Proces online</li><li>Nowe konto osobiste</li><li>Szczegóły promocji u partnera</li></ul>
+            <a class="button" href="https://tmlead.pl/redirect/826719_383" target="_blank" rel="nofollow sponsored">Przejdź do oferty</a>
           </div>
-
           <div class="card">
-            <span class="badge">Karty</span>
-            <h3>Karta kredytowa</h3>
-            <p>Korzystaj z limitu i promocji bankowych.</p>
-            <div class="benefit">Dodatkowe benefity</div>
-            <a class="button" href="https://tmlead.pl/redirect/826719_3019" target="_blank">Sprawdź kartę</a>
+            <span class="badge">Konto z premią</span>
+            <h3>Oferta konta 4</h3>
+            <p>Oferta dla osób szukających konta z dodatkowymi korzyściami.</p>
+            <div class="benefit">Promocja bankowa</div>
+            <ul><li>Założenie przez internet</li><li>Warunki opisane na stronie</li><li>Możliwe korzyści dla nowych klientów</li></ul>
+            <a class="button" href="https://tmlead.pl/redirect/826719_3114" target="_blank" rel="nofollow sponsored">Przejdź do oferty</a>
           </div>
+          <div class="card">
+            <span class="badge">Konto z premią</span>
+            <h3>Oferta konta 5</h3>
+            <p>Porównaj kolejną propozycję i zobacz, czy pasuje do Twoich potrzeb.</p>
+            <div class="benefit">Sprawdź warunki promocji</div>
+            <ul><li>Wniosek online</li><li>Prosta ścieżka przejścia</li><li>Opis korzyści u partnera</li></ul>
+            <a class="button" href="https://tmlead.pl/redirect/826719_3085" target="_blank" rel="nofollow sponsored">Przejdź do oferty</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="kredyty" class="section">
+      <div class="container">
+        <h2>Kredyty gotówkowe</h2>
+        <p class="section-intro">Oferty kredytów gotówkowych z możliwością sprawdzenia szczegółów online.</p>
+        <div class="cards">
+          <div class="card">
+            <span class="badge">Kredyt</span>
+            <h3>Oferta kredytu 1</h3>
+            <p>Sprawdź ofertę kredytu gotówkowego i szczegóły wniosku.</p>
+            <div class="benefit">Szybkie sprawdzenie oferty</div>
+            <ul><li>Wniosek przez internet</li><li>Warunki u partnera</li><li>Możliwość porównania</li></ul>
+            <a class="button" href="https://tmlead.pl/redirect/826719_2403" target="_blank" rel="nofollow sponsored">Sprawdź kredyt</a>
+          </div>
+          <div class="card">
+            <span class="badge">Kredyt</span>
+            <h3>Oferta kredytu 2</h3>
+            <p>Poznaj następną propozycję kredytową i jej warunki.</p>
+            <div class="benefit">Oferta online</div>
+            <ul><li>Proces internetowy</li><li>Szczegóły u partnera</li><li>Jasna ścieżka przejścia</li></ul>
+            <a class="button" href="https://tmlead.pl/redirect/826719_2053" target="_blank" rel="nofollow sponsored">Sprawdź kredyt</a>
+          </div>
+          <div class="card">
+            <span class="badge">Kredyt</span>
+            <h3>Oferta kredytu 3</h3>
+            <p>Sprawdź kolejną ofertę i wybierz rozwiązanie dopasowane do siebie.</p>
+            <div class="benefit">Wniosek online</div>
+            <ul><li>Przejście do partnera</li><li>Opis warunków na stronie oferty</li><li>Możliwość porównania propozycji</li></ul>
+            <a class="button" href="https://tmlead.pl/redirect/826719_3120" target="_blank" rel="nofollow sponsored">Sprawdź kredyt</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ubezpieczenia" class="section">
+      <div class="container">
+        <h2>Ubezpieczenia na życie</h2>
+        <p class="section-intro">Sprawdź oferty ubezpieczeń na życie i zapoznaj się z zakresem ochrony na stronie partnera.</p>
+        <div class="cards">
+          <div class="card"><span class="badge">Ubezpieczenie</span><h3>Oferta ubezpieczenia 1</h3><p>Oferta dla osób, które chcą zadbać o bezpieczeństwo finansowe bliskich.</p><div class="benefit">Ochrona na życie</div><ul><li>Sprawdzenie online</li><li>Szczegóły na stronie partnera</li><li>Możliwość porównania</li></ul><a class="button" href="https://tmlead.pl/redirect/826719_2186" target="_blank" rel="nofollow sponsored">Zobacz ofertę</a></div>
+          <div class="card"><span class="badge">Ubezpieczenie</span><h3>Oferta ubezpieczenia 2</h3><p>Poznaj kolejną ofertę i sprawdź, jaki zakres ochrony obejmuje.</p><div class="benefit">Sprawdź zakres ochrony</div><ul><li>Przejście online</li><li>Warunki na stronie partnera</li><li>Oferta informacyjna</li></ul><a class="button" href="https://tmlead.pl/redirect/826719_1806" target="_blank" rel="nofollow sponsored">Zobacz ofertę</a></div>
+          <div class="card"><span class="badge">Ubezpieczenie</span><h3>Oferta ubezpieczenia 3</h3><p>Porównaj warunki i wybierz ofertę odpowiednią dla siebie.</p><div class="benefit">Porównaj warunki</div><ul><li>Online</li><li>Szczegóły u partnera</li><li>Oferta informacyjna</li></ul><a class="button" href="https://tmlead.pl/redirect/826719_1790" target="_blank" rel="nofollow sponsored">Zobacz ofertę</a></div>
+          <div class="card"><span class="badge">Ubezpieczenie</span><h3>Oferta ubezpieczenia 4</h3><p>Sprawdź kolejną opcję ochrony i przeczytaj szczegóły na stronie partnera.</p><div class="benefit">Oferta online</div><ul><li>Szczegóły u partnera</li><li>Informacje o ochronie</li><li>Przejrzysta ścieżka kliknięcia</li></ul><a class="button" href="https://tmlead.pl/redirect/826719_2183" target="_blank" rel="nofollow sponsored">Zobacz ofertę</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="karty" class="section">
+      <div class="container">
+        <h2>Karty kredytowe</h2>
+        <p class="section-intro">Oferty kart kredytowych z możliwością sprawdzenia korzyści i warunków bezpośrednio u partnera.</p>
+        <div class="cards">
+          <div class="card"><span class="badge">Karta kredytowa</span><h3>Oferta karty 1</h3><p>Sprawdź korzyści i możliwość złożenia wniosku online.</p><div class="benefit">Dodatkowe benefity</div><ul><li>Online</li><li>Warunki u partnera</li><li>Przejrzysty proces</li></ul><a class="button" href="https://tmlead.pl/redirect/826719_3019" target="_blank" rel="nofollow sponsored">Sprawdź kartę</a></div>
+          <div class="card"><span class="badge">Karta kredytowa</span><h3>Oferta karty 2</h3><p>Poznaj kolejną propozycję karty kredytowej.</p><div class="benefit">Sprawdź warunki</div><ul><li>Wniosek online</li><li>Szczegóły na stronie partnera</li><li>Możliwość porównania</li></ul><a class="button" href="https://tmlead.pl/redirect/826719_2812" target="_blank" rel="nofollow sponsored">Sprawdź kartę</a></div>
+          <div class="card"><span class="badge">Karta kredytowa</span><h3>Oferta karty 3</h3><p>Porównaj kartę i przeczytaj opis korzyści na stronie partnera.</p><div class="benefit">Oferta online</div><ul><li>Przejście do oferty</li><li>Opis warunków</li><li>Prosty proces</li></ul><a class="button" href="https://tmlead.pl/redirect/826719_2775" target="_blank" rel="nofollow sponsored">Sprawdź kartę</a></div>
+          <div class="card"><span class="badge">Karta kredytowa</span><h3>Oferta karty 4</h3><p>Sprawdź kolejną możliwość i wybierz ofertę dopasowaną do swoich potrzeb.</p><div class="benefit">Zobacz szczegóły</div><ul><li>Online</li><li>Szczegóły u partnera</li><li>Przycisk przejścia do oferty</li></ul><a class="button" href="https://tmlead.pl/redirect/826719_2163" target="_blank" rel="nofollow sponsored">Sprawdź kartę</a></div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <h2>Ważne informacje</h2>
-        <p>
-          Strona ma charakter informacyjno-promocyjny i nie stanowi porady finansowej.
-        </p>
-        <p>
-          Linki mogą być afiliacyjne — mogę otrzymać prowizję bez dodatkowych kosztów dla Ciebie.
-        </p>
+      <div class="container" style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:20px;align-items:start;">
+        <div class="highlight">
+          <h2 style="margin-top:0;">Dlaczego warto sprawdzić oferty na tej stronie?</h2>
+          <p>W jednym miejscu masz zebrane różne typy ofert finansowych. Możesz porównać propozycje i szybko przejść do strony partnera, aby zapoznać się z pełnymi warunkami.</p>
+          <ul>
+            <li>konta z premią i bonusami</li>
+            <li>kredyty gotówkowe</li>
+            <li>ubezpieczenia na życie</li>
+            <li>karty kredytowe</li>
+          </ul>
+        </div>
+        <div id="wazne" class="info-box">
+          <h2 style="margin-top:0;">Ważne informacje</h2>
+          <p>Strona ma charakter informacyjno-promocyjny i nie stanowi porady finansowej ani rekomendacji.</p>
+          <p>Niektóre linki na stronie są linkami afiliacyjnymi. Mogę otrzymać prowizję, jeśli skorzystasz z oferty po przejściu przez link. Nie wpływa to na koszt dla użytkownika.</p>
+          <p>Zawsze zapoznaj się z regulaminem, tabelą opłat, RRSO i szczegółowymi warunkami na stronie partnera.</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      © 2026 Twoja Marka Finansowa
+      © 2026 Twoja Marka Finansowa | Strona informacyjno-promocyjna
     </div>
   </footer>
 </body>
